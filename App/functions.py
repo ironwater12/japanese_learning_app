@@ -146,7 +146,7 @@ def check_answer(selected_option, text_answer, mode_libre, mode_no_mistake, curr
                 score['max_score'] = score['correct'] 
     
     else:
-        message = f"❌ Wrong answer, it was : **{current_question['right_answer']}**"
+        message = f"❌ Wrong, it was : **{current_question['right_answer']}**"
 
         if mode_no_mistake:
             if score['correct'] > score['max_score']:

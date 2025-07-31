@@ -125,11 +125,12 @@ with gr.Blocks(css="""
         question_text = gr.Markdown("", elem_id="question_markdown")
         answer_options = gr.Radio(choices=[], label="", elem_id="options_radio")
         text_input = gr.Textbox(placeholder="Write your answer: ", label="", visible=False, interactive=True)
+        result = gr.Markdown("", elem_id="result_box")
         
         # Results and score
         with gr.Column():
             reset_score_btn = gr.Button("Reset Score", elem_id="reset_score_btn")
-            result = gr.Markdown("", elem_id="result_box")
+            
             score_box = gr.Markdown("", elem_id="score_box")
             max_score = gr.Markdown(f"**🏆 Max score: 0**", visible=False, elem_id="max_score")
 
@@ -182,4 +183,4 @@ with gr.Blocks(css="""
 
 
 if __name__ == "__main__":
-    interface.launch()
+    interface.launch()  #share=True)
