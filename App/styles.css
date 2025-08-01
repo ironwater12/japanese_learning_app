@@ -1,0 +1,199 @@
+/* Overall app container */
+#app-container {
+    max-width: 700px;
+    margin: 2rem auto;
+    background: #f9f9fb;
+    padding: 2rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+/* Title */
+#title {
+    text-align: center;
+    color: #5b3e96;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    user-select: none;
+}
+
+/* Settings Row */
+#settings_row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.8rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+#settings_row .gr-checkbox {
+    flex: 1 1 45%;
+    min-width: 140px;
+}
+
+/* Quiz box container with fixed height */
+#quiz-box {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.8rem 2.2rem;
+    box-shadow: inset 0 0 10px #ececec;
+    margin-bottom: 1.8rem;
+    height: 420px; /* Fixed height to prevent button shift */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Question text styling */
+.question_text {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1.3rem;
+    color: #4a4a4a;
+}
+
+/* Radio options styling */
+#options_radio {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+#options_radio .gr-radio {
+    margin-bottom: 0.8rem;
+}
+
+/* Text input box */
+#text_input_box textarea {
+    font-size: 1.1rem;
+    padding: 0.6rem 0.9rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+#text_input_box textarea:focus {
+    outline: none;
+    border-color: #5b3e96;
+    box-shadow: 0 0 6px rgba(91, 62, 150, 0.5);
+}
+
+/* Result box */
+#result_box {
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    min-height: 1.4rem;
+    color: #317773;
+}
+
+/* Score section */
+#score_section {
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.2rem;
+}
+
+/* Score box */
+#score_box {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #5b3e96;
+}
+
+/* Max score */
+#max_score {
+    font-size: 1rem;
+    color: #999;
+}
+
+/* Buttons Row */
+#buttons_row {
+    display: flex;
+    justify-content: center;
+    gap: 1.3rem;
+    margin-top: 1.5rem;
+}
+
+/* Buttons styling */
+#check_btn, #next_btn {
+    background-color: #5b3e96;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.6rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    user-select: none;
+}
+
+#check_btn:disabled,
+#next_btn:disabled {
+    background-color: #b3a8e3;
+    cursor: not-allowed;
+}
+
+#check_btn:hover:not(:disabled),
+#next_btn:hover:not(:disabled) {
+    background-color: #422a7b;
+}
+
+/* Reset button smaller and discreet */
+#reset_score_btn {
+    background-color: #ccc;  /* light gray */
+    color: #555;
+    border: none;
+    padding: 0.3rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    font-weight: 500;
+    user-select: none;
+    align-self: flex-start; /* align reset button to left in score section */
+    transition: background-color 0.3s ease;
+}
+
+#reset_score_btn:hover {
+    background-color: #aaa;
+    color: #333;
+}
+
+/* Hover on radio options */
+#options_radio .gr-radio:hover {
+    background-color: #f1ebff;
+    border-radius: 6px;
+}
+
+/* Checkbox label cursor pointer */
+#settings_row label {
+    cursor: pointer;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+    #app-container {
+        padding: 1.5rem 1.8rem;
+        max-width: 95vw;
+    }
+
+    #settings_row {
+        flex-direction: column;
+    }
+
+    #settings_row .gr-checkbox {
+        flex: 1 1 100%;
+    }
+
+    #buttons_row {
+        flex-direction: column;
+    }
+
+    #check_btn, #next_btn, #reset_score_btn {
+        width: 100%;
+    }
+}

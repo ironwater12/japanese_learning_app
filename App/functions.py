@@ -39,7 +39,7 @@ def make_question(base_dict, question_used, num_choice=4):
     """
 
     character = random.choice(list(base_dict.keys()))
-    question = question_used + "<br> **" + character + "**"
+    question = question_used + "**" + character + "**"  #<br> 
     right_answer = base_dict[character]
     other_keys = {k: v for k, v in base_dict.items() if k!= character}
 
