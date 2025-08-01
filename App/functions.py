@@ -1,7 +1,21 @@
+# import
 import gradio as gr
 import random
+import json
 
-from data import hiragana_dict, reverse_hiragana_dict, translation_dict, reverse_translation_dict, question_hiragana, question_reverse_hiragana, question_translation, question_reverse_translation
+# translation data loading
+with open("app_data.json", "r", encoding="utf-8") as f:
+    app_data = json.load(f)
+
+hiragana_dict = app_data['translation_data']['hiragana']
+reverse_hiragana_dict = {v: k for k,v in hiragana_dict.items()}
+translation_dict = app_data['translation_data']['words_translation']
+reverse_translation_dict = {v: k for k,v in translation_dict.items()}
+
+question_hiragana = app_data['question']['question_hiragana']
+question_reverse_hiragana = app_data['question']['question_reverse_hiragana']
+question_translation = app_data['question']['question_translation']
+question_reverse_translation = app_data['question']['question_reverse_translation']
 
 
 def reset_score(score):

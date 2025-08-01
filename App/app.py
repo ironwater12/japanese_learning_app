@@ -1,10 +1,25 @@
+### Setup
+
+# import
 import gradio as gr
+import json
 
+# local import
 from functions import new_question, check_answer, toggle_mode_libre, toggle_switch_base_dict, reset_score, toggle_no_mistake
-from data import hiragana_dict, question_hiragana
 
+# CSS loading
 with open("styles.css", "r", encoding="utf-8") as f:
     css_code = f.read()
+
+# translation data loading
+with open("app_data.json", "r", encoding="utf-8") as f:
+    app_data = json.load(f)
+
+hiragana_dict = app_data['translation_data']['hiragana']
+question_hiragana = app_data['question']['question_hiragana']
+
+
+### App code
 
 with gr.Blocks(css=css_code) as interface:
 
