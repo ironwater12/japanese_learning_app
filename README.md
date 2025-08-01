@@ -1,0 +1,1 @@
+Small Gradio App to train in Japanese, learn hiragana and some vocabulary

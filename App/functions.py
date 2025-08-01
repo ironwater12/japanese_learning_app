@@ -1,7 +1,7 @@
 import gradio as gr
 import random
 
-from data import hirukana_dict, reverse_hirukana_dict, translation_dict, reverse_translation_dict, question_hirukana, question_reverse_hirukana, question_translation, question_reverse_translation
+from data import hiragana_dict, reverse_hiragana_dict, translation_dict, reverse_translation_dict, question_hiragana, question_reverse_hiragana, question_translation, question_reverse_translation
 
 
 def reset_score(score):
@@ -208,15 +208,15 @@ def toggle_switch_base_dict(mode_lang, mode_words, current_question, score):
             base_dict = reverse_translation_dict
             base_question = question_reverse_translation
         else:
-            base_dict = reverse_hirukana_dict
-            base_question = question_reverse_hirukana
+            base_dict = reverse_hiragana_dict
+            base_question = question_reverse_hiragana
     else:
         if mode_words:
             base_dict = translation_dict
             base_question = question_translation
         else:
-            base_dict = hirukana_dict
-            base_question = question_hirukana
+            base_dict = hiragana_dict
+            base_question = question_hiragana
 
     return base_dict, base_question, *new_question(base_dict, base_question, current_question, score)  # a new question is generated when the mode is changed
             

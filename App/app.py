@@ -1,7 +1,7 @@
 import gradio as gr
 
 from functions import new_question, check_answer, toggle_mode_libre, toggle_switch_base_dict, reset_score, toggle_no_mistake
-from data import hirukana_dict, question_hirukana
+from data import hiragana_dict, question_hiragana
 
 
 with gr.Blocks(css="""
@@ -80,6 +80,9 @@ with gr.Blocks(css="""
         background-color: #FF4136;
         color: white;
     }
+    #reset_score_btn:hover{
+        background-color: #E03A30;
+    }
     #buttons_row {
         display: flex;
         justify-content: center;
@@ -141,8 +144,8 @@ with gr.Blocks(css="""
 
         # Initial state
         next_btn.disabled = True
-        dict_used = gr.State(hirukana_dict)
-        question_used = gr.State(question_hirukana)
+        dict_used = gr.State(hiragana_dict)
+        question_used = gr.State(question_hiragana)
         current_question = gr.State({"question": "", "all-answers": [], "right_answer": ""})
         score = gr.State({"correct": 0, "total": 0, "max_score": 0})
 
