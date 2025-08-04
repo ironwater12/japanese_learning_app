@@ -144,10 +144,12 @@ def check_answer(selected_option, text_answer, mode_libre, mode_no_mistake, curr
     score["total"] += 1
     
     if mode_libre:
-        right_answers = current_question['right_answer'].split('/')
+        right_answers = current_question['right_answer'].split('/') + [current_question['right_answer']]
         correct = False
         for right_answer in right_answers:
             correct = (text_answer.strip().lower() == right_answer.strip().lower()) or (text_answer.split('(')[0].strip().lower() == right_answer.split('(')[0].strip().lower())
+            if correct:
+                break
     else:
         correct = selected_option == current_question["right_answer"]
 
